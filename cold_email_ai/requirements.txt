@@ -1,0 +1,17 @@
+streamlit
+langchain
+langchain-community
+langchain-groq
+langchain-huggingface
+sentence-transformers
+chromadb
+beautifulsoup4
+requests
+tiktoken
+python-dotenv
+pypdf
+python-docx
+python-multipart
+fastapi
+uvicorn[standard]
+

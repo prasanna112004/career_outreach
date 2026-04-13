@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Career Outreach Assistant (LinkedIn)",
+  "version": "1.0.0",
+  "description": "Extract LinkedIn job details and generate outreach via your local API.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://www.linkedin.com/*", "http://localhost:8000/*"],
+  "action": {
+    "default_title": "Career Outreach",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/jobs/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

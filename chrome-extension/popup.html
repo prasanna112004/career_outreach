@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        width: 380px;
+        padding: 12px;
+        margin: 0;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 8px;
+      }
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        width: 100%;
+        cursor: pointer;
+      }
+      #status {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 8px;
+      }
+      #out {
+        white-space: pre-wrap;
+        font-size: 11px;
+        max-height: 200px;
+        overflow: auto;
+        border: 1px solid #e2e8f0;
+        padding: 8px;
+        margin-top: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 style="margin: 0 0 8px">Career Outreach</h3>
+    <label>API base (FastAPI)</label>
+    <input type="text" id="apiBase" value="http://127.0.0.1:8001" />
+
+    <label>Upload resume (PDF/DOCX/TXT/MD)</label>
+    <input type="file" id="resumeFile" accept=".pdf,.docx,.txt,.md" />
+    <div id="resumeFileStatus" style="font-size: 11px; color: #64748b; margin-top: 4px"></div>
+
+    <label>Resume text (paste) — optional if uploaded</label>
+    <textarea id="resume" rows="6" placeholder="Paste resume text..."></textarea>
+
+    <label>Tone</label>
+    <select id="tone">
+      <option value="professional">professional</option>
+      <option value="friendly">friendly</option>
+      <option value="direct">direct</option>
+    </select>
+
+    <label>Output</label>
+    <select id="outputType">
+      <option value="email">Email</option>
+      <option value="linkedin">LinkedIn DM</option>
+      <option value="cover_letter">Cover letter</option>
+    </select>
+
+    <label>Groq model</label>
+    <input type="text" id="model" value="llama-3.1-8b-instant" />
+
+    <label>Job description (optional manual paste, useful for LinkedIn)</label>
+    <textarea
+      id="jdManual"
+      rows="6"
+      placeholder="Paste the LinkedIn job description here if auto-load fails..."
+    ></textarea>
+
+    <button type="button" id="loadPage">Load from LinkedIn tab</button>
+    <button type="button" id="generate">Generate</button>
+    <div id="status"></div>
+    <div id="out"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

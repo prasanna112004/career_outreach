@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.venv/
+**/.venv/
+__pycache__/
+*.pyc
+
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+
+*.log
+chroma_db/
+cold_email_ai/chroma_db/
+cold_email_ai/chroma_db_resume/

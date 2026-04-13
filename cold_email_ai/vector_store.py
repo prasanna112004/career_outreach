@@ -12,7 +12,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import List
 
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 from langchain_community.vectorstores import Chroma
 
 from services.model_provider import DEFAULT_EMBEDDING_MODEL, get_embeddings_model

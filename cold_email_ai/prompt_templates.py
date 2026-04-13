@@ -14,7 +14,7 @@ from __future__ import annotations
 from typing import Iterable, List
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 
 from scraper import JobDescription
 

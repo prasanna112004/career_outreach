@@ -12,7 +12,7 @@ import io
 import re
 from typing import List
 
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 
 
 def clean_resume_text(text: str) -> str:

@@ -9,7 +9,7 @@ in a vector store.
 
 from typing import List
 
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 
 
 def _base_metadata() -> dict:

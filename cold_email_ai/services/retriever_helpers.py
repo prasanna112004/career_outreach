@@ -9,7 +9,7 @@ from __future__ import annotations
 import hashlib
 from typing import Any, Dict, Tuple
 
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 
 from portfolio_data import load_portfolio_documents
 from rag_pipeline import (

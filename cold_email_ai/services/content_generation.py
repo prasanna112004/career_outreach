@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 from typing import List, Tuple
 
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 
 from prompt_templates import build_outreach_prompt
 from scraper import JobDescription

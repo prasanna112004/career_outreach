@@ -15,7 +15,7 @@ import re
 from typing import List
 
 from langchain_core.documents import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from vector_store import build_vector_store, load_vector_store, DEFAULT_PERSIST_DIR
 

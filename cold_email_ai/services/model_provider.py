@@ -1,11 +1,10 @@
-"""Centralized Groq + HuggingFace model providers."""
+"""Centralized Groq + optional embeddings model providers."""
 
 from __future__ import annotations
 
 import os
 
 from langchain_groq import ChatGroq
-from langchain_huggingface import HuggingFaceEmbeddings
 
 DEFAULT_CHAT_MODEL = "llama-3.1-8b-instant"
 DEFAULT_EMBEDDING_MODEL = "BAAI/bge-base-en-v1.5"
@@ -37,6 +36,10 @@ def get_chat_model(model: str | None = None, temperature: float = 0.4):
 
 
 def get_embeddings_model(model: str | None = None):
+    # Lazy import so Streamlit Cloud can boot even if sentence-transformers/torchvision
+    # are unavailable. RAG pipeline already has lexical fallback retrieval.
+    from langchain_huggingface import HuggingFaceEmbeddings
+
     return HuggingFaceEmbeddings(
         model_name=(model or DEFAULT_EMBEDDING_MODEL),
         model_kwargs={"device": "cpu"},
